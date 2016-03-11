@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>HTML/CSS Decencies - EPAM RD Labs Lectures</title>
+		<title>HTML/CSS Decencies | EPAM RD Labs Lectures</title>
 
 		<meta name="description" content="Selection of different methods, approaches and lifehacks for creating scalable and maintainable projects">
 		<meta name="author" content="Yevhen Isakov">
@@ -42,11 +42,760 @@
 			<div class="slides">
 
 				<section id="mainpage" data-state="mainpage">
-					<h1>Page Layouts, The</h1>
+					<h1>Decencies, The</h1>
 					<h3>Yevhen Isakov</h3>
-					<time datetime="2016-03-09">9 March, 2016</time>
+					<time datetime="2016-03-11">11 March, 2016</time>
 				</section>
 
+				<section data-state="bad-code">
+					<h2>Bad code</h2>
+					<h3 class="fragment">Why?</h3>
+				</section>
+
+				<section data-state="code-smells"></section>
+
+				<section data-state="html-decencies-title">
+					<h2>HTML Decencies</h2>
+				</section>
+
+				<section data-state="html5"></section>
+
+				<section data-state="html-doctype">
+					<h3>doctype</h3>
+					<div class="fragment is-line-through">
+						<pre><code class="xml">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd"&gt;
+</code></pre>
+					</div>
+					<div class="fragment is-line-through">
+						<pre><code class="xml">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+</code></pre>
+					</div>
+					<div class="fragment">
+						<pre><code class="xml">&lt;!doctype html&gt;</code></pre>
+					</div>
+				</section>
+
+				<section data-state="html-doctype-again">
+					<h2>&lt;! doctype html&gt;</h2>
+				</section>
+
+				<section data-state="html-not-only-doctype">
+					<h3>html5 is <span>not only</span> about doctype</h3>
+					<ul>
+						<li class="fragment is-line-through">
+							<pre><code class="xml">&lt;!doctype html&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;link rel="stylesheet" href="..." type="text/css" /&gt;
+&lt;script src="..." type="text/javascript"&gt;&lt;/script&gt;</code></pre>
+						</li>
+						<li class="fragment">
+							<pre><code class="xml">&lt;!doctype html&gt;
+&lt;meta charset="utf-8" /&gt;
+&lt;link rel="stylesheet" href="..." /&gt;
+&lt;script src="..."&gt;&lt;/script&gt;</code></pre>
+						</li>
+					</ul>
+					<div class="fragment">That's not all...</div>
+				</section>
+
+				<section data-state="html-freedom-bg"></section>
+
+				<section data-state="html-freedom">
+					<h3>Freedom?</h3>
+					<ul>
+						<li class="fragment">
+                            <pre><code data-trim class="xml">
+&lt;form method="get"&gt;
+    &lt;input type="text" name="tel" /&gt;
+    &lt;input type="password" name="pass" /&gt;
+    &lt;input type="checkbox" name="save_pass" checked /&gt;
+    &lt;input type="submit" value="OK" /&gt;
+&lt;/form&gt;
+</code></pre>
+
+                            <pre><code data-trim class="xml">
+&lt;FORM method=GET&gt;
+    &lt;input type="TEXT" name=tel&gt;
+    &lt;INPUT type=password NAME="pass" /&gt;
+    &lt;input TYPE=checkbox name=save_pass checked=checked&gt;
+    &lt;input type='submit' VALUE=OK&gt;
+&lt;/FORM&gt;
+</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="html-angry-pepelsbey"></section>
+
+				<section data-state="html-deprecated-tags">
+					<h3>Deprecated tags</h3>
+					<ul>
+						<li class="fragment is-line-through">
+							<pre><code class="xml">&lt;center class="container"&gt;&lt;/center&gt;</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="xml">&lt;div class="container"&gt;&lt;/div&gt;
+
+&lt;style&gt;
+	.container {
+		margin: auto;
+		}
+&lt;/style&gt;</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="html-html5-tags">
+					<h3>HTML<span>5</span> tags</h3>
+				</section>
+
+
+				<section data-state="html-divatose">
+					<h3 class="fragment">Divatose</h3>
+                    <pre><code data-trim class="xml">&lt;div class="item-container"&gt;
+    &lt;div class="item"&gt;
+        &lt;div class="item-image-container"&gt;
+            &lt;img class="item-image" src="..." /&gt;
+        &lt;/div&gt;
+        &lt;div class="item-content"&gt;
+            &lt;div class="item-content-inner"&gt;
+                &lt;div class="item-title"&gt;Lorem Ipsum&lt;/div&gt;
+                &lt;div class="item-pubdate"&gt;Dec 2, 2014&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="item-description"&gt;Lorem ipsum dolor&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim class="xml">&lt;section class="item-container"&gt;
+    &lt;figure class="item"&gt;
+        &lt;img class="item-image" src="..." /&gt;
+        &lt;div class="item-content"&gt;
+            &lt;figcaption class="item-title"&gt;Lorem Ipsum&lt;/figcaption&gt;
+            &lt;time class="item-pubdate"&gt;Dec 2, 2014&lt;/time&gt;
+            &lt;p class="item-description"&gt;Lorem ipsum dolor&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/figure&gt;
+&lt;/section&gt;</code></pre>
+				</section>
+
+				<section data-state="html-accessibility">
+					<h3>Accessibility</h3>
+					<div class="fragment"><a href="https://wsd.events/2014/12/06/pres/web-a11y/" target="_blank">Accessibility for everyone &mdash; Roman Liutikov</a></div>
+				</section>
+
+				<section data-state="html-html5-forms">
+					<h3>HTML5 Forms</h3>
+					<ul>
+						<li class="fragment">
+                            <pre><code class="xml">&lt;form method="get"&gt;
+    &lt;input type="text" name="tel" /&gt;
+    &lt;input type="password" name="pass" /&gt;
+    &lt;input type="checkbox" name="save_pass" checked /&gt;
+    &lt;input type="submit" value="OK" /&gt;
+&lt;/form&gt;</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="xml">&lt;form method="get"&gt;
+    &lt;input type="tel" name="tel" /&gt;
+    &lt;input type="password" name="pass" /&gt;
+    &lt;input type="checkbox" name="save_pass" checked /&gt;
+    &lt;input type="submit" value="OK" /&gt;
+&lt;/form&gt;</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="html-html5-forms-example">
+					<ul>
+						<li>
+							<figure>
+								<img src="assets/i/input-tel.jpg" alt="" />
+							</figure>
+                            <pre><code>&lt;input type="tel" /&gt;</code></pre>
+						</li
+						><li>
+							<figure>
+								<img src="assets/i/input-url.jpg" alt="" />
+							</figure>
+                            <pre><code>&lt;input type="url" /&gt;</code></pre>
+						</li
+						><li>
+							<figure>
+								<img src="assets/i/input-email.jpg" alt="" />
+							</figure>
+                            <pre><code>&lt;input type="email" /&gt;</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="html-anchor-vs-button">
+					<h3>anchor <span>vs</span> button</h3>
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="xml">&lt;a href="#"&gt;Close&lt;/a&gt;
+
+&lt;a href="javascript:void(0)"&gt;Submit&lt;/a&gt;
+
+&lt;a&gt;Expand&lt;/a&gt;</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="xml">&lt;button type="button"&gt;Close&lt;/button&gt;
+
+&lt;input type="submit" value="Submit" /&gt;
+
+&lt;span&gt;Expand&lt;/span&gt;</code></pre>
+						</li>
+					</ul>
+					<div class="fragment"><a href="http://pepelsbey.net/pres/push-it/" target="_blank">Push It! &mdash; Vadim Makeev</a></div>
+				</section>
+
+				<section data-state="html-microdata">
+					<h3>Microdata</h3>
+					<div class="fragment">
+						<h4><a href="http://schema.org" target="_blank">schema.org</a></h4>
+					</div>
+				</section>
+
+				<section data-state="html-microdata-example">
+					<ul>
+						<li>
+                            <pre><code data-trim class="bad">&lt;article&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Title&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+        &lt;p&gt;Description&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/article&gt;</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code data-trim class="good">&lt;article itemscope itemtype="http://schema.org/VideoObject"&gt;
+    &lt;header&gt;
+        &lt;h1 itemprop="name"&gt;Title&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;section itemprop="description"&gt;
+        &lt;p&gt;Description&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/article&gt;</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="html-data-attributes">
+					<h3><span>Data</span>-attributes</h3>
+				</section>
+
+				<section data-state="html-data-attributes-example">
+					<ul>
+						<li>
+                            <pre><code class="xml">&lt;section class="item-container" type="teaser"&gt;
+    &lt;figure class="item"&gt;
+        &lt;img class="item-image" src="..." orig-url="..." /&gt;
+        &lt;div class="item-content"&gt;
+            &lt;figcaption class="item-title"&gt;Lorem Ipsum&lt;/figcaption&gt;
+            &lt;time class="item-pubdate"&gt;Dec 2, 2014&lt;/time&gt;
+            &lt;p class="item-description"&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/figure&gt;
+&lt;/section&gt;</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="xml">&lt;section class="item-container" data-container-type="teaser"&gt;
+    &lt;figure class="item"&gt;
+        &lt;img class="item-image" src="..." data-original-url="..." /&gt;
+        &lt;div class="item-content"&gt;
+            &lt;figcaption class="item-title"&gt;Lorem Ipsum&lt;/figcaption&gt;
+            &lt;time class="item-pubdate"&gt;Dec 2, 2014&lt;/time&gt;
+            &lt;p class="item-description"&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/figure&gt;
+&lt;/section&gt;</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-decencies-title">
+					<h2><span>CSS</span> Decencies</h2>
+				</section>
+
+				<section data-state="css-selectors">
+					<h3><span>CSS</span> Selectors</h3>
+					<ul>
+						<li>
+							<div class="selector-level">CSS 1</div>
+							<div class="selector-array"><pre><code class="css">E,
+.class,
+#id,
+E F { ... }</code></pre></div>
+						</li>
+						<li class="fragment">
+							<div class="selector-level">CSS 2</div>
+							<div class="selector-array"><pre><code class="css">*,
+:first-child,
+E > F,
+E + F, E ~ F { ... }</code></pre></div>
+						</li>
+						<li class="fragment">
+							<div class="selector-level">CSS 3</div>
+							<div class="selector-array"><pre><code class="css">:not(),
+:enabled, :disabled,
+:nth-child(), :nth-of-type() { ... }</code></pre></div>
+						</li>
+						<li class="fragment">
+							<div class="selector-level">CSS 4</div>
+							<div class="selector-array"><pre><code class="css">:has(),
+:matches(),
+:empty { ... }</code></pre></div>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-selectors-example">
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.header ul li a { }
+
+div.block div.item:not(.current) a.item-link { }</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="css">.navigation-link { }
+
+.item-link { }</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-graceful-degradation-vs-progressive-enhancement">
+					<h3>Graceful Degradation <br /><span>vs</span> <br />Progressive Enhancement</h3>
+				</section>
+
+				<section data-state="css-graceful-degradation">
+					<h3><span>Grace</span>ful Degradation</h3>
+					<ul>
+						<li class="fragment">
+                            <pre><code class="css">.element {
+	linear-gradient(to left, #600000, #c80000);
+	}</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="css">.element {
+	linear-gradient(to left, #600000, #c80000);
+	}
+
+.lt-ie9 .element {
+	background-color: #920000;
+	background-image: url(...);
+	}</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-progressive-enhancement">
+					<h3><span>Progress</span>ive Enhancement</h3>
+					<ul>
+						<li class="fragment">
+                            <pre><code class="css">.element {
+	background-color: #920000;
+	}
+
+.element:hover {
+	background-color: #c80000;
+    }</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="css">.element {
+	background-color: #920000;
+	transition: background-color linear .2s;
+	}
+
+.element:hover {
+	background-color: #c80000;
+	}</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-how-to">
+					<h3>CSS &mdash; <span>How To?</span></h3>
+				</section>
+
+				<section data-state="css-bad-code">
+                    <pre><code>.dropdown{
+	position:absolute;
+	left: 0%;
+	top:24px;
+	height: 400px\9;
+	margin: 3px 0px;
+	border: 1px solid #B9B9B9;
+	width: 200px; min-height: 300px;
+	box-shadow: inset 0 -3px #aaa, 0 2px #eee;
+	padding: 10px !important;
+	opacity: 0.9 !important;
+	color: #333333;
+	overflow:hidden; /* chtobi ne vilazil tekst */
+	background-color: #fff
+	}</code></pre>
+				</section>
+
+				<section data-state="css-wat"></section>
+
+				<section data-state="css-rules-1">
+					<h4>One line &mdash; one rule</h4>
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.dropdown {
+	width: 200px; min-height: 300px;
+	}</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code data-trim class="good">.dropdown {
+    width: 200px;
+    min-height: 300px;
+    }</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-rules-2">
+					<h4>Semicolon at the end</h4>
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.dropdown {
+    background-color: #fff
+    }</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="css">.dropdown {
+    background-color: #fff;
+    }</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-rules-3">
+					<h4>Rule &mdash; space &mdash; value</h4>
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.dropdown{
+    position:absolute;
+    }</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="css">.dropdown {
+    position: absolute;
+    }</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-rules-4">
+					<h4>Magic numbers</h4>
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.dropdown {
+    top: 24px;
+    }</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="css">.dropdown {
+    top: 100%;
+    }</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-rules-5">
+					<h4>Zero is always zero</h4>
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.dropdown {
+	left: 0%;
+	margin: 3px 0px;
+	}</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="css">.dropdown {
+	left: 0;
+	margin: 3px 0;
+	}</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-rules-6">
+					<h4>CSS Hacks</h4>
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.dropdown {
+	height: 400px\9;
+	}</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="xml">&lt;!--[if lt IE 9]&gt;&lt;html class="lt-ie9"&gt;&lt;![endif]--&gt;</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="css">.lt-ie9 .dropdown {
+	height: 400px;
+	}
+
+/* or */
+
+.ie8 .dropdown {
+	height: 400px;
+	}</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-rules-7">
+					<h4>!important</h4>
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.dropdown {
+	padding: 10px !important;
+	opacity: 0.9 !important;
+	}</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="css">.dropdown_cute {
+	padding: 10px;
+	opacity: 0.9;
+	}</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-rules-8">
+					<h4>Colors</h4>
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.dropdown {
+	border: 1px solid #B9B9B9;
+	color: #333333;
+	}</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="css">.dropdown {
+	border: 1px solid #b9b9b9;
+	color: #333;
+	}</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-rules-9">
+					<h4>Vendor prefixes</h4>
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.dropdown {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+    }</code></pre>
+						</li>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.dropdown {
+    -webkit-user-select: none;
+        -ms-user-select: none;
+         -o-user-select: none;
+            user-select: none;
+    }</code></pre>
+						</li>
+						<li class="fragment">
+							<pre><code class="css">.dropdown {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    }</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-rules-10">
+					<h4>Rules with multiple values</h4>
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.dropdown {
+    box-shadow: inset 0 -3px #aaa, 0 2px #eee;
+    }</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="css">.dropdown {
+    box-shadow: inset 0 -3px #aaa,
+                      0  2px #eee;
+    }</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-rules-11">
+					<h4>Comments</h4>
+					<ul>
+						<li class="fragment is-line-through">
+                            <pre><code class="css">.dropdown {
+	overflow: hidden; /* chtobi ne vilazil tekst */
+	}</code></pre>
+						</li>
+						<li class="fragment">
+                            <pre><code class="css">.dropdown {
+	overflow: hidden; /* for text overflow prevention */
+	}</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-rules-not-all">
+					<h3>That is not all...</h3>
+					<div><a href="http://pepelsbey.net/pres/css-management/" target="_blank">CSS Menegement</a></div>
+				</section>
+
+				<section data-state="css-rules-comparison">
+					<ul>
+						<li>
+                            <pre><code>.dropdown{
+    position:absolute;
+    left: 0%;
+    top:24px;
+    height: 400px\9;
+    margin: 3px 0px;
+    border: 1px solid #B9B9B9;
+    width: 200px; min-height: 300px;
+    box-shadow: inset
+    0 -3px #aaa, 0 2px #eee;
+    padding: 10px !important;
+    opacity: 0.9 !important;
+    color: #333333;
+    overflow:hidden; /* ... */
+    background-color: #fff
+    }</code></pre>
+						</li>
+
+						<li class="fragment">
+                            <pre><code>.dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin: 3px 0;
+    border: 1px solid #b9b9b9;
+    width: 200px;
+    min-height: 300px;
+    box-shadow: inset 0 -3px #aaa,
+                      0  2px #eee;
+    color: #333;
+    overflow: hidden; /* ... */
+    background-color: #fff;
+    }
+
+.dropdown_cute {
+    padding: 10px;
+    opacity: .9;
+    }
+
+.lt-ie9 .dropdown {
+    height: 400px;
+    }</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="css-rules-order">
+					<h3>CSS Rules Order</h3>
+					<pre><code class="css">.dropdown {
+	// Common behavior rules
+	position: absolute;
+	left: 0;
+	top: 100%;
+	// Box model & dimensions
+	width: 200px;
+	min-height: 300px;
+	margin: 3px 0;
+	border: 1px solid #b9b9b9;
+	// Visual rules applied to box
+	overflow: hidden; /* for text overflow prevention */
+	box-shadow: inset 0 -3px #aaa,
+	0  2px #eee;
+	background-color: #fff;
+	// Visual rules applied to content
+	color: #333;
+	}</code></pre>
+					<div class="fragment"><a href="http://csscomb.com" target="_blank">csscomb.com</a></div>
+				</section>
+
+				<section data-state="css-params">
+					<img src="assets/i/params.gif" alt="" />
+				</section>
+				
+				<section class="css-classnames">
+					<h4>Wrong classnames</h4>
+					<ul class="cols">
+						<li>
+                            <pre><code class="css bad">.button {
+	padding: 10px 20px;
+	border: 1px solid;
+	}
+
+.button-red {
+	border-color: #f33;
+	background: #faa;
+	color: #f66;
+	}
+
+.button-green {
+	border-color: #3f3;
+	background: #afa;
+	color: #6f6;
+	}
+
+.button-blue {
+	border-color: #33f;
+	background: #aaf;
+	color: #66f;
+	}</code></pre>
+						</li
+						><li class="fragment">
+							<pre><code class="css">.button {
+	padding: 10px 20px;
+	border: 1px solid;
+	}
+
+.button-cancel {
+	border-color: #f33;
+	background: #faa;
+	color: #f66;
+	}
+
+.button-success {
+	border-color: #3f3;
+	background: #afa;
+	color: #6f6;
+	}
+
+.button-info {
+	border-color: #33f;
+	background: #aaf;
+	color: #66f;
+	}</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="warning">
+					<blockquote>Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.</blockquote>
+					<p>- Martin Goldind</p>
+				</section>
+
+				<section data-state="thank-you">
+					<h1>Thanks!</h1>
+					<h3>Yevhen Isakov</h3>
+					<div><a href="http://twitter.com/is4kov" target="_blank">@is4kov</a></div>
+				</section>
 
 			</div>
 

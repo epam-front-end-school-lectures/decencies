@@ -4,7 +4,7 @@
 }
 
 .reveal pre {
-	font-size: 0.7em !important;
+	font-size: 0.65em !important;
 }
 
 .slide-background {
@@ -39,7 +39,15 @@
 	background-size: cover;
 }
 
-.mainpage body::after {
+.mainpage time {
+	display: block;
+	position: relative;
+	top: 100px;
+	font-size: .75em;
+	color: #fff;
+	}
+
+/*.mainpage body::after {
 	content: "9 March, 2016";
 	position: absolute;
 	right: 7%;
@@ -48,7 +56,7 @@
 	font-size: 1.25em;
 	color: #fff;
 	white-space: nowrap;
-}
+}*/
 
 .intro h3 {
 	color: #39c2d7;
@@ -267,3 +275,188 @@
 	vertical-align: middle;
 	text-align: left;
 }
+
+
+
+
+.is-line-through:not(.current-fragment) code {
+	text-decoration: line-through;
+	}
+
+.is-line-through:not(.current-fragment) pre {
+	opacity: .8;
+	}
+
+.bad-code h3 {
+	color: #39c2d7;
+	}
+
+.code-smells body {
+	background: #000 url(../assets/i/code-smells.jpg) center no-repeat;
+	background-size: auto 95%;
+	}
+
+.html5 body {
+	background: url(../assets/i/html5-logo.png) center no-repeat;
+	}
+
+.html-doctype h3 {
+	margin-bottom: 50px;
+	}
+
+.html-doctype-again h2 {
+	color: #39c2d7;
+	}
+
+.html-not-only-doctype h3 span {
+	color: #39c2d7;
+	}
+
+.html-html5-tags h3 span {
+	color: #39c2d7;
+	animation: shadow-move 1s infinite;
+	}
+
+.html-freedom-bg body {
+	background: url(../assets/i/freedom.jpg) center no-repeat;
+	background-size: cover;
+	}
+
+.html-angry-pepelsbey body {
+	background: url(../assets/i/angry-pepelsbey.png) center no-repeat;
+	}
+
+.html-html5-forms-example ul {
+	margin-top: 0;
+	text-align: center;
+	white-space: nowrap;
+	}
+
+.html-html5-forms-example ul li {
+	display: inline-block;
+	width: 35%;
+	vertical-align: top;
+	}
+
+.html-html5-forms-example ul li img {
+	border: 2px solid black;
+	}
+
+.html-anchor-vs-button h3 span {
+	color: #39c2d7;
+	}
+
+.html-data-attributes h3 span {
+	color: #39c2d7;
+	}
+
+.html-data-attributes-example ul {
+	margin: 0;
+	}
+
+.html-data-attributes-example ul li pre {
+	width: 100%;
+	}
+
+.css-decencies-title h2 span {
+	color: #39c2d7;
+	}
+
+.css-selectors ul {
+	margin: 0;
+	list-style: none;
+	}
+
+.css-selectors ul div:first-child {
+	display: inline-block;
+	width: 15%;
+	vertical-align: middle;
+	}
+
+.css-selectors ul div + div {
+	display: inline-block;
+	width: 83%;
+	vertical-align: middle;
+	}
+
+.css-graceful-degradation-vs-progressive-enhancement h3 span {
+	color: #39c2d7;
+	}
+
+.css-progressive-enhancement h3 span {
+	color: #39c2d7;
+	}
+
+.css-graceful-degradation h3 span {
+	color: #39c2d7;
+	}
+
+.css-how-to h3 span {
+	color: #39c2d7;
+	}
+
+.css-wat body {
+	background: #000 url(../assets/i/wat.jpg) center no-repeat;
+	background-size: contain;
+	}
+
+.css-rules-9 ul {
+	margin: 0;
+	}
+
+.css-rules-comparison ul {
+	margin: 0;
+	}
+
+.css-rules-comparison ul li {
+	float: left;
+	width: 49%;
+	}
+
+.css-rules-comparison ul li + li {
+	margin-left: 2%;
+	}
+
+.css-rules-comparison ul li pre {
+	width: 100%;
+	}
+
+.css-classnames ul {
+	margin: -20px 0 0;
+	}
+
+.css-classnames ul li {
+	float: left;
+	width: 49%;
+	}
+
+.css-classnames ul li + li {
+	margin-left: 2%;
+	}
+
+.css-classnames ul li pre {
+	width: 100%;
+	}
+
+.warning p {
+	text-align: right;
+	}
+
+.thank-you h1 {
+	margin-bottom: 100px;
+	}
+
+@keyframes shadow-move {
+
+	from {
+		text-shadow: 0 0 20px;
+		}
+
+	to {
+		text-shadow: 0 0 200px;
+		}
+	}
+
+.reveal blockquote {
+	font-size: 1.5em;
+	}
