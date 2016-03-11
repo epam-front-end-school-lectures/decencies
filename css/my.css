@@ -284,7 +284,7 @@
 	}
 
 .is-line-through:not(.current-fragment) pre {
-	opacity: .8;
+	opacity: .75;
 	}
 
 .bad-code h3 {
