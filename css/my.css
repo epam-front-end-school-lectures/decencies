@@ -460,3 +460,8 @@
 .reveal blockquote {
 	font-size: 1.5em;
 	}
+
+.reveal ol li,
+.reveal ul li {
+	list-style: none !important;
+}
